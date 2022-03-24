@@ -1,0 +1,74 @@
+\documentclass[10pt,twocolumn]{article} 
+
+% required packages for Oxy Comps style
+\usepackage{oxycomps} % the main oxycomps style file
+\usepackage{times} % use Times as the default font
+\usepackage[style=numeric,sorting=nyt]{biblatex} % format the bibliography nicely
+
+\usepackage{amsfonts} % provides many math symbols/fonts
+\usepackage{listings} % provides the lstlisting environment
+\usepackage{amssymb} % provides many math symbols/fonts
+\usepackage{graphicx} % allows insertion of grpahics
+\usepackage{hyperref} % creates links within the page and to URLs
+\usepackage{url} % formats URLs properly
+\usepackage{verbatim} % provides the comment environment
+\usepackage{xpatch} % used to patch \textcite
+
+\bibliography{references}
+\DeclareNameAlias{default}{last-first}
+
+\xpatchbibmacro{textcite}
+  {\printnames{labelname}}
+  {\printnames{labelname} (\printfield{year})}
+  {}
+  {}
+
+\pdfinfo{
+    /Title ("Literature Review")
+    /Author (Caleb Jordening)
+}
+
+\title{"Literature Review"}
+\author{Caleb Jordening}
+\affiliation{Occidental College}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    
+\end{abstract}
+
+\section{Introduction}
+\section {Problem Context}
+In the past few years, artificial intelligence (AI) has garnered quite the popularity from the media. From self-driving cars to smart-homes and virtual assistants, the future is quite hopeful for all of the technological innovations this field has to offer. Moreover, the sub-category of AI known as deep learning is using neural networks to help in the endeavor of reverse engineering the brain. These artificial neural networks can provide a model to let us understand more about how the biological brain works; and, hopefully, will allow us to produce general AI that possesses cognitive abilities greater than or equal to a human's. Currently, however, we are only able to produce narrow AI that can only perform a single task. 
+
+In the search for creating general AI, board games and video games provide a high-dimensional, goal-oriented environment in which learning algorithms can be implemented to achieve the goal of the game. Games provide a structure that allows for learning algorithms to be implemented so that the AI can become more adept to learning, which could then potentially generalise to real life applications — resulting in the emergence of general AI. The three most prominent methods for machine learning are: supervised learning, unsupervised learning, and reinforcement learning. Of these three, reinforcement learning is arguably the best suited for training an agent to play a game. Board and video games possess states, rewards, and actions. A person playing the game provides certain inputs that result in actions in the game. Actions are performed to reach a particular state of the game; which, in turn, might provide some sort of reward (points, items, experience, strategic advantage, etc.). Reinforcement learning provides a means by which the agent can be trained by interacting with the world, and seeing what actions lead to the most reward. However, this is not without challenge.
+
+What is known as the "curse of dimensionality" poses a significant obstacle for machine learning development \cite{karanam_2021}. As the number of inputs to be considered increases, the amount of decisions the machine has to filter through in order to find the most optimal action increases exponentially. The more complex a game is, learning becomes a more computationally expensive process. Additionally, the higher-dimensionality created by many inputs can make the most optimal action ambiguous for the machine. High dimensionality can be reduced to a lower-dimension manifold. If this is done, then the problem becomes figuring out a way to shape reward functions in a meaningful way without losing any important information necessary for maximizing the reward.
+
+
+
+
+
+
+\section{Technical Background}
+
+
+The principles of machine reinforcement learning are extremely similar to how humans learn by interacting with their environment. These interactions provide copious amounts of information about cause and effect relationships; and, this learned knowledge affects decision making and behavior in one's pursuit of achieving their goals. Reinforcement learning provides a computational means by which machines can learn how to achieve certain goals by interacting with their environment via rewards and punishments \cite{Sutton1998}. I need to do a more in depth research and better understand my own project first in order to figure out what is appropriate for this section.
+
+
+
+
+\section{Prior Work}
+The use of reinforcement learning in video games is not a novel idea. A machine called "AlphaGo" was trained via reinforcement learning to play the game Go. In terms of complexity, Go is "profoundly complex" with more possible game configurations than there are known atoms in the universe \cite{deepmind}. \textcite{deepmind} states that prior to their machine, AI was only able to play at the amateur level. After thousands of games of playing against itself, through reinforcement learning, AlphaGo was able to sweep a professional Go player 5-0 in 2015. Later, it was able to beat the world's best Go player. 
+
+OpenAI Five is another machine that was trained via reinforcement learning to play the game Dota 2\cite{OpenAI_dota}. Dota 2 is a 5v5 battle-arena video game, that involves teamwork in order to achieve victory. OpenAI Five was trained for 180 years per day on 256 GPUs and 128,000 CPU cores. In 2019, OpenAI Five swept a world champion Dota 2 team 2-0.
+
+
+
+
+\printbibliography 
+
+\end{document}
